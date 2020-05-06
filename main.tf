@@ -13,11 +13,11 @@ resource "aws_vpc" "bar_vpc" {
 }
 
 resource "aws_s3_bucket" "baz_bucket" {
-  bucket = "baz_bucket"
+  bucket = "baz"
   acl = "private"
 }
 
 resource "aws_s3_bucket" "qux_bucket" {
-  bucket = "baz_bucket"
+  bucket = "qux"
   acl = "private"
 }
