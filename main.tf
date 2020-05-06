@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_vpc" "foo_vpc" {
-  cidr_block = "0.0.0.0/16"
+  cidr_block = "0.0.0.0/0"
 }
 
 resource "aws_vpc" "bar_vpc" {
