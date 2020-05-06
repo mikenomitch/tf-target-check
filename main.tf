@@ -40,3 +40,8 @@ resource "aws_security_group" "foo_security_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_security_group" "no_gress" {
+  name        = "no_gress"
+  description = "Public group no xgress rules"
+}
