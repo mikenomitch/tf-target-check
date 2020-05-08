@@ -1,3 +1,14 @@
+terraform {
+  backend "remote" {
+    hostname = "staging-app.terraform.io"
+    organization = "nomitch_oasis"
+
+    workspaces {
+      name = "cli-targeting"
+    }
+  }
+}
+
 provider "aws" {
   access_key = "${var.aws_access_key}"
   secret_key = "${var.aws_secret_key}"
