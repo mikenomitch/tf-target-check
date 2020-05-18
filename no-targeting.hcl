@@ -1,0 +1,5 @@
+no_resource_targeting = rule { tfrun.target_addrs is null }
+
+main = rule {
+	no_resource_targeting
+}
