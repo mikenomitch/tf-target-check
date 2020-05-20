@@ -1,2 +1,2 @@
 import "tfrun"
-main = length(tfrun.target_addrs) == 0
+main = (length(tfrun.target_addrs) else 0) == 0
