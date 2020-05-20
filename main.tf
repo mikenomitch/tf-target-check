@@ -1,7 +1,7 @@
 terraform {
   backend "remote" {
-    hostname = "staging-app.terraform.io"
-    organization = "nomitch_oasis"
+    hostname = "app.terraform.io"
+    organization = "dadgarcorp"
 
     workspaces {
       name = "cli-targeting"
@@ -24,7 +24,7 @@ resource "aws_vpc" "bar_vpc" {
 }
 
 resource "aws_s3_bucket" "baz_bucket" {
-  bucket = "baz"
+  bucket = "anothername"
   acl = "private"
 }
 
@@ -33,24 +33,24 @@ resource "aws_s3_bucket" "qux_bucket" {
   acl = "private"
 }
 
-resource "aws_security_group" "foo_security_group" {
-  name        = "public_sg"
-  description = "Public group"
+// resource "aws_security_group" "foo_security_group" {
+//   name        = "public_sg"
+//   description = "Public group"
 
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "ssh"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+//   ingress {
+//     from_port   = 22
+//     to_port     = 22
+//     protocol    = "ssh"
+//     cidr_blocks = ["0.0.0.0/0"]
+//   }
 
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
+//   egress {
+//     from_port   = 0
+//     to_port     = 0
+//     protocol    = "-1"
+//     cidr_blocks = ["0.0.0.0/0"]
+//   }
+// }
 
 resource "aws_security_group" "no_gress" {
   name        = "no_gress"
