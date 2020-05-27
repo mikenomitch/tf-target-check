@@ -16,12 +16,12 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "aaa_bucket" {
-  bucket = "aaa"
+  bucket = "nomitch_aaa_bucket_aaa"
   acl = "private"
 }
 
 resource "aws_s3_bucket" "bbb_bucket" {
-  bucket = "bbb"
+  bucket = "nomitch_bbb_bucket_bbb"
   acl = "private"
 }
 
