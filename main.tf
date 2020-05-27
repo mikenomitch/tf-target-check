@@ -15,42 +15,15 @@ provider "aws" {
   region     = var.aws_region
 }
 
-resource "aws_vpc" "foo_vpc" {
-  cidr_block = "10.10.0.0/16"
-}
-
-resource "aws_vpc" "bar_vpc" {
-  cidr_block = "10.10.0.0/16"
-}
-
-resource "aws_s3_bucket" "baz_bucket" {
-  bucket = "anothername"
+resource "aws_s3_bucket" "aaa_bucket" {
+  bucket = "aaa"
   acl = "private"
 }
 
-resource "aws_s3_bucket" "qux_bucket" {
-  bucket = "qux"
+resource "aws_s3_bucket" "bbb_bucket" {
+  bucket = "bbb"
   acl = "private"
 }
-
-// resource "aws_security_group" "foo_security_group" {
-//   name        = "public_sg"
-//   description = "Public group"
-
-//   ingress {
-//     from_port   = 22
-//     to_port     = 22
-//     protocol    = "ssh"
-//     cidr_blocks = ["0.0.0.0/0"]
-//   }
-
-//   egress {
-//     from_port   = 0
-//     to_port     = 0
-//     protocol    = "-1"
-//     cidr_blocks = ["0.0.0.0/0"]
-//   }
-// }
 
 resource "aws_security_group" "no_xgress" {
   description = "Public group no xgress rules"
