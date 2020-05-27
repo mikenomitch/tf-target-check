@@ -1,2 +1,7 @@
 import "tfrun"
-main = (length(tfrun.target_addrs) else 0) == 0
+
+no_resource_targeting = rule { tfrun.target_addrs is null }
+
+main = rule {
+	no_resource_targeting
+}

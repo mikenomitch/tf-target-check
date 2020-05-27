@@ -52,7 +52,6 @@ resource "aws_s3_bucket" "qux_bucket" {
 //   }
 // }
 
-resource "aws_security_group" "no_gress" {
-  name        = "no_gress"
+resource "aws_security_group" "no_xgress" {
   description = "Public group no xgress rules"
 }
